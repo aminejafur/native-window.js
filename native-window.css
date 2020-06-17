@@ -1,0 +1,295 @@
+/*
+ *
+ * native-window.css | V 1.0
+ *
+ * Copyright (C) 2020 Amine Jafur
+ *
+ * www.aminejafur.com/nativeWindow
+ *
+ */
+
+#nativewindow {
+    position: fixed;
+    width: 100px;
+    height: 50px;
+    padding: 44px 7px 7px;
+    top: -100px;
+    left: -100px;
+    border: 1px solid rgb(136, 136, 136);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    opacity: 1;
+    z-index: 99;
+    -webkit-transition: all 500ms ease-in-out, z-index 0s;
+    -o-transition: all 500ms ease-in-out, z-index 0s;
+    transition: all 500ms ease-in-out, z-index 0s;
+}
+
+.create {
+    -webkit-animation: create 0.8s forwards;
+            animation: create 0.8s forwards;
+}
+
+@-webkit-keyframes create {
+    0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@keyframes create {
+    0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+#nativewindowcontainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgb(238, 238, 238);
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#nativewindowbanner {
+    position: relative;
+    top: -38px;
+    padding: 10px;
+    margin-bottom: -38px;
+    border-bottom: 1px solid rgb(187, 187, 187);
+    font-weight: bold;
+    cursor: default;
+    z-index: 100;
+    -webkit-transition: top .5s;
+    -o-transition: top .5s;
+    transition: top .5s;
+}
+
+#nativewindowbanner img {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+#nativewindowbanner #mini img {
+    position: relative;
+    width: 64px;
+    float: left;
+    top: -8px;
+    left: -4px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+#nativewindowbanner p {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+
+#nativewindowbanner #nativewindowiconsgroup {
+    position: relative;
+    float: right;
+    top: -17px;
+    right: -2px;
+}
+
+#nativewindowbanner #nativewindowiconsgroup li {
+    float: left;
+    vertical-align: middle;
+}
+
+#nativewindowbanner #nativewindowiconsgroup img {
+    position: relative;
+    width: 32px;
+    top: -8px;
+    padding: 0px 0px 0px 12px;
+    cursor: pointer;
+}
+
+#nativewindowbanner #nativewindowiconsgroup svg {
+    position: relative;
+    width: 32px;
+    top: -8px;
+    padding: 0px 0px 0px 12px;
+    cursor: pointer;
+}
+
+#nativewindowcontent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#nativewindowcontainer iframe, #nativewindowcontainer div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: rgb(238, 238, 238);
+    display: none;
+    overflow: scroll;
+}
+
+#drop {
+    position: fixed;
+    bottom: -100px;
+    width: 100%;
+    height: 140px;
+    padding: 10px 0 10px 0;
+    background: #5c8a97;
+    background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 1)));
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    text-align: center;
+    opacity: 0.5;
+    cursor: pointer;
+    margin: -8px;
+    -webkit-transition: bottom 0.5s, opacity 0.5s;
+    -o-transition: bottom 0.5s, opacity 0.5s;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+
+#drop:hover {
+    bottom: -60px;
+    opacity: 1;
+    -webkit-transition: bottom 0.5s, opacity 0.5s;
+    -o-transition: bottom 0.5s, opacity 0.5s;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+
+.fullScreen {
+    top: -30px !important;
+}
+
+#nativewindowbanner:hover {
+    cursor: move;
+}
+
+.fullScreen #nativewindowbanner:hover {
+    cursor: move;
+    top: -14px !important;
+    -webkit-transition: top .5s;
+    -o-transition: top .5s;
+    transition: top .5s;
+}
+
+.hide {
+    display: none !important;
+}
+
+.destroy {
+    -webkit-animation: destroya 0.8s forwards;
+            animation: destroya 0.8s forwards;
+}
+
+@-webkit-keyframes destroya {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
+}
+
+@keyframes destroya {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
+}
+
+#resizeableDiv {
+    width: 30vw;
+    height: 30vh;
+    background-color: #84f4c6;
+    position: relative;
+}
+
+.resize-border-right {
+    position: absolute;
+    cursor: e-resize;
+    width: 9px;
+    right: -5px;
+    top: 0;
+    height: 100%;
+}
+
+.resize-border-bottom {
+    position: absolute;
+    cursor: s-resize;
+    height: 9px;
+    bottom: -5px;
+    width: 100%;
+}
+
+.incorner {
+    opacity: 0.3 !important;
+    -webkit-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+}
+
+.incorner:hover {
+    opacity: 1 !important;
+    -webkit-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+}
+
+.disableDrag:hover {
+    cursor: default !important;
+}

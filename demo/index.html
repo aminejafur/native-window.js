@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Native Window</title>
+   </head>
+   <link rel="stylesheet" type="text/css" href="../native-window.css">
+   <style type="text/css">
+     div{
+      cursor: pointer;
+     }
+   </style>
+   <body>
+
+      <h1>Native windows v 1.0</h1>
+      <p><strong>Build your fully customizable Modal,</strong> </p>
+      <p>This plugin is a part of a web desk project I am planning to work on and  since the window modal is a main feature in web desk I decided to build a plugin for it and share it with the community, while using this plugin you will be able to create a powerful Modal with many features and controls over it like (Resize, Drag, Iconize, destroy and more), also the plugin will allow you to customize your modal theme depending on your needs. 
+      <p><b>Here are some examples with different options and different themes :</b></p>
+      
+      <div id="nativeWindow" >Open window with Iframe ,default theme and fefault dimensions</div>
+      <hr>
+      <div id="htmlWindow" >Open window with HTML, custom options and before and after build functions,
+         (Resize not allowed, full page not allowed)
+      </div>
+      <hr>
+      <div id="anohterhtmlWindow" >Open window with HTML, custom options, Icons, background focus and before and after build functions,
+         (Only resize is allowed)
+      </div>
+
+   </body>
+   <script type="text/javascript" src="../native-window.js"></script>
+   <script type="text/javascript">
+
+      // #nativeWindow, using default theme
+      var i = 0;
+      document.querySelector('#nativeWindow').addEventListener('click',function(){
+               createNewWindow({
+                  Title:"My before and after comparison plugin : "+ i++,
+                  Link: "https://htmlpreview.github.io/?https://raw.githubusercontent.com/aminejafur/before-effect-slider.js/master/demo/index.html"
+               });
+      })      
+      
+      // #htmlWindow, window with HTML, custom options and before and after build functions, (Resize not allowed, full page not allowed)
+      
+      let myHTML = `<dl>
+                    <dt style='color: green;'>Definition list</dt>
+                       <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.</dd>
+                       <dt style='color: red;'>Lorem ipsum dolor sit amet</dt>
+                       <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.</dd>
+                    </dl>`;
+      
+      document.querySelector('#htmlWindow').addEventListener('click',function(){
+      
+               createNewWindow({
+                  Title:"Window With HTML Content : " + i++, // Window Title
+                  TitleSize : 13, // Title font size
+                  TitleTextShadow: 'rgb(21, 21, 21) 0px 0px 3px', // Title Text Shadow
+                  TitleTextColor: 'rgb(255, 255, 255)', // Title Text color
+      
+                  Html: myHTML, // Html content
+              
+                  Width: 600, // Width
+                  Height: 300, // Height
+                  Top: 10, // Top Position
+                  Left: 150, // Left Position
+              
+                  BannerBackground: '-webkit-linear-gradient(top, rgb(164, 165, 169), rgb(164, 165, 169))', // Top banner backgroud
+              
+                  WindowShadow: 'hsla(0, 0%, 0%, 0.8) 0px 0px 25px 0px', //Window Shadow
+                  WindowBackground: 'rgb(164, 165, 169)', // Window bakground ( will be visible as window border )
+                  WindowRaduis: '0px', // window corners raduis
+              
+                  ResizeEnable:false, // Enable Resizing
+                  DragEnable: true,  // Enabe dragging
+                  ButtonFull: false, // Show Full screen button
+      
+                  callbackBefore: () => {alert('before build')}, //Callback Before building window
+                  callbackAfter: () => {alert('after build')}//Callback After building window, add setTimeout to wait animation finish if required ({setTimeout(function(){alert('after build')},200)})
+               });
+      
+      })
+      
+      // #anohterhtmlWindow, window with HTML, custom options, background focus and before and after build functions, (Only resize is allowed)
+      
+      
+      let myHTML2 = `<nav>
+                     <ul>
+                         <li><a href="javascript:void(0)" title="Lorum ipsum dolor sit amet">Lorem</a></li>
+                         <li><a href="javascript:void(0)" title="Aliquam tincidunt mauris eu risus">Aliquam</a></li>
+                         <li><a href="javascript:void(0)" title="Morbi in sem quis dui placerat ornare">Morbi</a></li>
+                         <li><a href="javascript:void(0)" title="Praesent dapibus, neque id cursus faucibus">Praesent</a></li>
+                         <li><a href="javascript:void(0)" title="Pellentesque fermentum dolor">Pellentesque</a></li>
+                       </ul>
+                     </nav>
+                     <hr>
+      
+                     <h1>HTML Ipsum Presents</h1>
+      
+                     <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor                      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi                     vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum                  sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,                    sagittis tempus lacus enim ac dui. <a href="javascript:void(0)">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                     
+                     <h2>Header Level 2</h2>
+                     
+                     <ol>
+                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                        <li>Aliquam tincidunt mauris eu risus.</li>
+                     </ol>
+                     
+                     <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget                    ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis                    elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+                     
+                     <h3>Header Level 3</h3>
+                     
+                     <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                        <li>Aliquam tincidunt mauris eu risus.</li>
+                     </ul>
+                     
+                     <pre><code>
+                     #header h1 a {
+                       display: block;
+                       width: 300px;
+                       height: 80px;
+                     }
+                     </code></pre>`;
+      
+      document.querySelector('#anohterhtmlWindow').addEventListener('click',function(){
+      
+               createNewWindow({
+                  Title:"Window With HTML Content : " + i++, // Window Title
+                  TitleSize : 13, // Title font size
+                  TitleTextShadow: 'rgb(21, 21, 21) 0px 0px 3px', // Title Text Shadow
+                  TitleTextColor: 'rgb(255, 255, 255)', // Title Text color
+      
+                  Html: myHTML2, // Html content
+              
+                  Width: 600, // Width
+                  Height: 300, // Height
+                  Top: 10, // Top Position
+                  Left: 150, // Left Position
+              
+                  BannerBackground: '-webkit-linear-gradient(top, rgb(89, 181, 146), rgb(122, 204, 136))', // Top banner backgroud
+              
+                  WindowShadow: null, //Window Shadow
+                  WindowBackground: 'rgba(115, 189, 114, 0.61)', //Window bakground ( will be visible as window border )
+                  WindowRaduis: '0px', // window corners raduis
+              
+                  FocusBackground: true, // Background focus effect
+                  ResizeEnable:true, // Enable Resizing
+                  DragEnable: false,  // Enabe dragging
+                  ButtonFull: false, // Show Full screen button
+      
+                  iconizeIcon: 'https://image.flaticon.com/icons/svg/814/814151.svg',
+                  normalizeIcon: 'https://image.flaticon.com/icons/svg/814/814144.svg',
+                  maximizeIcon: 'https://image.flaticon.com/icons/svg/814/814143.svg'
+               });
+      
+
+      })
+      
+   </script>
+</html>
