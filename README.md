@@ -24,7 +24,7 @@ Start by including `native-window.js` and `native-window.css` or the minified ve
 Create the button or the clickable area that will trigger the window, or you can call the `createNewWindow` function directly when the document is fully loaded.
 
 ```html
-<div id="nativeWindow" >Open window with Iframe ,default theme and fefault dimensions</div>
+<div id="nativeWindow" >Open window with Iframe ,default theme and default dimensions</div>
 ```
 Then call the Plugin using (NB: We will call the plugin using an iframe link):
 
@@ -65,6 +65,22 @@ callbackBefore: () => {alert('before build')}, //Callback Before building window
 callbackAfter: () => {alert('after build')}//Callback After building window, add setTimeout to wait animation finish if required ({setTimeout(function(){alert('after build')},200)})
 });
 ```
+Also, you can use the following actions to control your windows (Use the window number as parameter, ex: data-thiswindowcount="1"):
+
+```js
+// toggleDrag, Toggle between making the window draggable or not.
+nativeWindow.toggleDrag(1)
+
+// toggleRightResize, Toggle between making the Right border resizable or not.
+nativeWindow.toggleRightResize(1)
+
+// toggleBottomResize, Toggle between making the Bottom border resizable or not.
+nativeWindow.toggleBottomResize(1)
+
+// destroy, close the window.
+nativeWindow.destroy(1)
+```
+
 ## TODO
 
 - [ ] Add touch events support.
